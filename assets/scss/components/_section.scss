@@ -1,0 +1,45 @@
+section {
+  box-shadow: 0 -4px 40px $shadow;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.section-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.fixed {
+  z-index: 1;
+
+  .section-inner {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.intro {
+  background-color: $pale-blue;
+
+  h1,
+  h2 {
+    color: $off-black;
+  }
+}
+
+.code {
+  background-color: $dark;
+}
+
+.photos {
+  background-color: $green;
+}
+
+.music {
+  background-color: $off-black;
+}
