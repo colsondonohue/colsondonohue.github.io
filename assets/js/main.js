@@ -1,27 +1,45 @@
 (function() {
-  // get section dom nodes
-  var sections = document.querySelectorAll('.section');
-  var sectionsInner = document.querySelectorAll('.section-inner');
+  // get section dom nodes and initial animation values
+  var sections = document.querySelectorAll('.section'),
+      sectionsInner = document.querySelectorAll('.section-inner'),
+      lastYOffset = 0,
+      vH = 0,
+      animating = false,
+      forNodes = function(nodeList, callback) {
+        return Array.prototype.forEach.call(nodeList, callback)
+      };
 
   // set section heights to initial viewport heights, fixes mobile chrome jumping from address bar
   function calcVH() {
-    var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    [].forEach.call(sectionsInner, function(section) {
+    vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    forNodes(sectionsInner, function(section) {
       section.style.height = vH + 'px';
     });
-    [].forEach.call(sections, function(section) {
+    forNodes(sections, function(section) {
       section.style.height = vH + 'px';
     });
   }
   calcVH();
   window.addEventListener('onorientationchange', calcVH);
 
+  // callback for scroll event
+  function onScroll() {
+    lastYOffset = window.pageYOffset;
+    requestAnim();
+  }
+
+  // only calls rAF if it hasn't already been called
+  function requestAnim() {
+    if (!animating) {
+      requestAnimationFrame(fixSection);
+      animating = true;
+    }
+  }
+
   // set current section to fixed
   function fixSection() {
-    var windowOffset = window.pageYOffset;
-    var height = sections[0].offsetHeight; // all sections are 100vh so heights are the same
-    var fixed = Math.floor(windowOffset / height);
-    [].forEach.call(sections, function(section, index) {
+    var fixed = Math.floor(lastYOffset / vH);
+    forNodes(sections, function(section, index) {
       if (index === fixed) {
         sections[index].classList.add('fixed');
       }
@@ -29,6 +47,7 @@
         sections[index].classList.remove('fixed')
       }
     });
+    animating = false;
   }
-  window.addEventListener('scroll', fixSection);
+  window.addEventListener('scroll', onScroll);
 }())
