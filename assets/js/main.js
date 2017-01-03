@@ -1,22 +1,20 @@
 (function() {
   // get section dom nodes
   var sections = document.querySelectorAll('.section');
+  var sectionsInner = document.querySelectorAll('.section-inner');
 
-  // debounces for performance - from David Walsh
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
+  // set section heights to initial viewport heights, fixes mobile chrome jumping from address bar
+  function calcVH() {
+    var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    [].forEach.call(sectionsInner, function(section) {
+      section.style.height = vH + 'px';
+    });
+    [].forEach.call(sections, function(section) {
+      section.style.height = vH + 'px';
+    });
+  }
+  calcVH();
+  window.addEventListener('onorientationchange', calcVH);
 
   // set current section to fixed
   function fixSection() {
@@ -32,7 +30,5 @@
       }
     });
   }
-
-  // bind function to scroll
   window.addEventListener('scroll', fixSection);
 }())
