@@ -1,6 +1,6 @@
-section {
+.section {
   box-shadow: 0 -4px 40px $shadow;
-  height: 100vh;
+  height: 70vh;
   position: relative;
   text-align: center;
   width: 100%;
@@ -21,7 +21,8 @@ section {
   }
 }
 
-.intro {
+.intro,
+.footer {
   background-color: $pale-blue;
 
   h1,

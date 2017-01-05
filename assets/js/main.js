@@ -9,9 +9,9 @@
         return Array.prototype.forEach.call(nodeList, callback)
       };
 
-  // set section heights to initial viewport heights, fixes mobile chrome jumping from address bar
+  // set section heights to fraction of initial viewport heights, fixes mobile chrome jumping from address bar
   function calcVH() {
-    vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    vH = 0.7 * Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     forNodes(sectionsInner, function(section) {
       section.style.height = vH + 'px';
     });
@@ -44,7 +44,7 @@
         sections[index].classList.add('fixed');
       }
       else {
-        sections[index].classList.remove('fixed')
+        sections[index].classList.remove('fixed');
       }
     });
     animating = false;
