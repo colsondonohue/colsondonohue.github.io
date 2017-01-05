@@ -4,7 +4,6 @@ section {
   position: relative;
   text-align: center;
   width: 100%;
-  z-index: 5;
 }
 
 .section-inner {
@@ -13,13 +12,12 @@ section {
 }
 
 .fixed {
-  z-index: 1;
+  z-index: -1;
 
   .section-inner {
     left: 0;
     position: fixed;
     top: 0;
-    z-index: 2;
   }
 }
 
