@@ -87,6 +87,12 @@ a {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-envelope-o::before {
-  content: "\e900";
+.icon-envelope-o {
+  margin-left: 7px;
+  position: relative;
+  top: 3.5px;
+
+  &::before {
+    content: '\e900';
+  }
 }

@@ -40,7 +40,7 @@
   function fixSection() {
     var fixed = Math.floor(lastYOffset / vH);
     forNodes(sections, function(section, index) {
-      if (index === fixed) {
+      if (index === fixed && lastYOffset !== 0) {
         sections[index].classList.add('fixed');
       }
       else {
