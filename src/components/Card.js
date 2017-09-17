@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
 import githubIcon from 'ionicons-svg/logo-octocat';
 import linkIcon from 'ionicons-svg/ios-link';
 
 const propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  body: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
   githubLink: PropTypes.string,
-  siteLink: PropTypes.string
+  siteLink: PropTypes.string,
+  horizontal: PropTypes.bool
 };
 
 const CardContainer = styled.div`
@@ -20,8 +20,9 @@ const CardContainer = styled.div`
   position: relative;
   vertical-align: top;
   margin: 1rem;
-  height: 29rem;
-  max-width: 19rem;
+  height: ${props => (props.horizontal ? '10rem' : '29rem')};
+  max-width: ${props => (props.horizontal ? '1200px' : '19rem')};
+  width: ${props => (props.horizontal ? 'calc(100% - 3rem)' : '')};
   background-color: #ffffff;
   box-shadow: 0 15px 20px 1px rgba(0, 0, 0, .08);
   transition: all 250ms cubic-bezier(.02, .01, .47, 1);
@@ -41,8 +42,10 @@ const CardImage = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${props => props.image});
-  height: 16rem;
-  border-radius: 0.2rem 0.2rem 0 0;
+  background-position: ${props => (props.horizontal ? 'center' : '')};
+  height: ${props => (props.horizontal ? '10rem' : '16rem')};
+  border-radius: ${props =>
+    props.horizontal ? '0.2rem' : '0.2rem 0.2rem 0 0'};
 `;
 
 const CardContent = styled.div`padding: 1rem;`;
@@ -51,6 +54,25 @@ const CardTitle = styled.h3`
   margin-top: 0;
   font-weight: 300;
   margin-bottom: 0.7rem;
+  text-transform: capitalize;
+`;
+
+const PhotoTitle = styled.h3`
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.5rem;
+  background: #ffffff;
+  color: #000000;
+  mix-blend-mode: screen;
+  padding: 1rem;
+  border-radius: 0.2rem;
 `;
 
 const CardBody = styled.p`
@@ -93,50 +115,58 @@ const LinkContainer = TagContainer.extend`
   }
 `;
 
-const PlainLink = styled.a`
-  color: inherit;
-`;
+const PlainLink = styled.a`color: inherit;`;
 
-const IconContainer = styled.span`
-  vertical-align: middle;
-`;
+const IconContainer = styled.span`vertical-align: middle;`;
 
-const Card = ({ image, title, body, tags, githubLink, siteLink }) =>
-  <CardContainer>
-    <CardImage image={image} />
+const Card = ({ image, title, body, tags, githubLink, siteLink, horizontal }) =>
+  <CardContainer horizontal={horizontal}>
+    <CardImage image={image} horizontal={horizontal} />
     <CardContent>
-      <CardTitle>
-        {title}
-      </CardTitle>
+      {horizontal
+        ? <PhotoTitle>
+            {title}
+          </PhotoTitle>
+        : <CardTitle>
+            {title}
+          </CardTitle>}
       <CardBody>
         {body}
       </CardBody>
     </CardContent>
-    <TagContainer>
-      {tags.map((tag, i) =>
-        <Tag key={i}>
-          {tag}
-        </Tag>
-      )}
-    </TagContainer>
-    <LinkContainer>
-      {githubLink
-        ? <PlainLink href={githubLink}>
-            <Tag>
-              GitHub
-              <IconContainer dangerouslySetInnerHTML={{ __html: githubIcon }} />
+    {tags
+      ? <TagContainer>
+          {tags.map((tag, i) =>
+            <Tag key={i}>
+              {tag}
             </Tag>
-          </PlainLink>
-        : ''}
-      {siteLink
-        ? <PlainLink href={siteLink}>
-            <Tag>
-              Live Site
-              <IconContainer dangerouslySetInnerHTML={{ __html: linkIcon }} />
-            </Tag>
-          </PlainLink>
-        : ''}
-    </LinkContainer>
+          )}
+        </TagContainer>
+      : ''}
+    {githubLink || siteLink
+      ? <LinkContainer>
+          {githubLink
+            ? <PlainLink href={githubLink}>
+                <Tag>
+                  GitHub
+                  <IconContainer
+                    dangerouslySetInnerHTML={{ __html: githubIcon }}
+                  />
+                </Tag>
+              </PlainLink>
+            : ''}
+          {siteLink
+            ? <PlainLink href={siteLink}>
+                <Tag>
+                  Live Site
+                  <IconContainer
+                    dangerouslySetInnerHTML={{ __html: linkIcon }}
+                  />
+                </Tag>
+              </PlainLink>
+            : ''}
+        </LinkContainer>
+      : ''}
   </CardContainer>;
 
 Card.propTypes = propTypes;

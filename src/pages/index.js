@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import Card from '../components/Card';
 import Title from '../components/Title';
 import Wrapper from '../components/Wrapper';
@@ -9,9 +10,21 @@ import stockXTicker from './stockxticker.png';
 import notSub from './notsub.png';
 import spryfieldUrbanFarm from './spryfieldurbanfarm.png';
 
+export const query = graphql`
+  query GetPhotos {
+    allPhotosJson(limit: 3) {
+      edges {
+        node {
+          name
+          photos
+        }
+      }
+      totalCount
+    }
+  }
 `;
 
-const IndexPage = () =>
+const IndexPage = ({ data }) =>
   <Wrapper>
     <Title>Projects and Experience</Title>
     <Card
@@ -59,6 +72,17 @@ const IndexPage = () =>
       siteLink="https://spryfieldurbanfarm.colsondonohue.com"
       githubLink="https://github.com/colsondonohue/spryfieldurbanfarm"
     />
+    <Title secondary>photos</Title>
+    {data.allPhotosJson.edges.map(edge =>
+      <Link to={`photos/${edge.node.name}`}>
+        <Card
+          horizontal
+          image={require(`../photos/${edge.node.photos[0]}`)}
+          title={edge.node.name}
+          key={edge.node.name}
+        />
+      </Link>
+    )}
   </Wrapper>;
 
 export default IndexPage;
