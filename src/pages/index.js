@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import Card from '../components/Card';
+import Title from '../components/Title';
+import Wrapper from '../components/Wrapper';
 import harbr from './harbr.png';
 import synesthetic from './synesthetic.png';
 import haveYouSeenMyRecords from './haveyouseenmyrecords.png';
@@ -8,21 +9,11 @@ import stockXTicker from './stockxticker.png';
 import notSub from './notsub.png';
 import spryfieldUrbanFarm from './spryfieldurbanfarm.png';
 
-const Wrapper = styled.div`
-  text-align: center;
-`;
-
-const ProjectsTitle = styled.h2`
-  color: #FFFFFF;
-  text-align: center;
-  font-weight: 300;
-  text-transform: lowercase;
-  letter-spacing: 0.2rem;
 `;
 
 const IndexPage = () =>
   <Wrapper>
-    <ProjectsTitle>Projects and Experience</ProjectsTitle>
+    <Title>Projects and Experience</Title>
     <Card
       image={harbr}
       title="Harbr - Developer Intern"
