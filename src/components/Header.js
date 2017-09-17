@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Link from 'gatsby-link';
 
 const HeaderWrapper = styled.header`
-  background: #4568DC;  /* fallback for old browsers */
-  background: linear-gradient(to right, #B06AB3, #4568DC);
+  background: #4568dc; /* fallback for old browsers */
+  background: linear-gradient(to right, #b06ab3, #4568dc);
   position: relative;
 
   &::after {
@@ -15,13 +15,13 @@ const HeaderWrapper = styled.header`
     left: -25%;
     width: 150%;
     height: 75%;
-    background: #F8F9F9;
+    background: #f8f9f9;
     transform: rotate(-3deg);
   }
 `;
 
 const LogoSpan = styled.span`
-  background: #FFFFFF;
+  background: #ffffff;
   color: #000000;
   mix-blend-mode: screen;
   padding: 0.75em;
@@ -30,7 +30,7 @@ const LogoSpan = styled.span`
 `;
 
 const Logo = styled.h1`
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: calc(0.75rem + 2.5vw);
   letter-spacing: 0.3em;
   font-weight: 700;
@@ -40,7 +40,7 @@ const Logo = styled.h1`
   margin: 0;
   display: block;
 
-  @media(max-width: 416px) {
+  @media (max-width: 416px) {
     padding-bottom: 11em;
   }
 `;
@@ -61,9 +61,7 @@ const Header = () =>
   <HeaderWrapper>
     <Logo>
       <HeaderLink to="/">
-        <LogoSpan>
-          Colson
-        </LogoSpan>
+        <LogoSpan>Colson</LogoSpan>
         Donohue
       </HeaderLink>
     </Logo>
