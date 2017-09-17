@@ -1,13 +1,15 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "colsondonohue.github.io",
+  "description": "Colson Donohue's personal website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Colson Donohue <colsondonohue@gmail.com>",
   "dependencies": {
     "gatsby": "^1.6.5",
     "gatsby-link": "^1.6.5",
     "gatsby-plugin-react-helmet": "^1.0.1",
     "gatsby-plugin-typography": "^1.7.2",
+    "gatsby-source-filesystem": "^1.4.12",
+    "gatsby-transformer-json": "^1.0.6",
     "ionicons-svg": "^3.0.0",
     "typography-theme-st-annes": "^0.15.10"
   },

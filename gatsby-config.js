@@ -10,6 +10,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`
       }
     },
-    'gatsby-plugin-styled-components'
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `photos`,
+        path: `${__dirname}/src/photos`
+      }
+    },
+    'gatsby-plugin-styled-components',
+    'gatsby-transformer-json'
   ]
-}
+};
