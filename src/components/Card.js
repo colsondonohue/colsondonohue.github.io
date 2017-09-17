@@ -34,7 +34,7 @@ const CardContainer = styled.div`
   }
 
   @media (max-width: 365px) {
-    height: 30.5rem;
+    height: ${props => (props.horizontal ? '10rem' : '30.5rem')};
   }
 `;
 
