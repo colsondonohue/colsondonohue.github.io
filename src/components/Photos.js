@@ -1,10 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-const propTypes = {
-  photos: PropTypes.arrayOf(PropTypes.string).isRequired
-};
 
 const Photo = styled.img`
   width: 90%;
@@ -18,13 +14,58 @@ const PhotoGrid = styled.div`
   margin-top: 2em;
 `;
 
-const Photos = ({ photos }) =>
-  <PhotoGrid>
-    {photos.map(photo =>
-      <Photo src={require(`../photos/${photo}`)} key={photo} />
-    )}
-  </PhotoGrid>;
+class Photos extends Component {
+  static propTypes = {
+    photos: PropTypes.arrayOf(PropTypes.string).isRequired
+  };
 
-Photos.propTypes = propTypes;
+  state = {
+    photosToShow: 8
+  };
+
+  ticking = false;
+
+  update() {
+    const distanceToBottom =
+      document.documentElement.offsetHeight -
+      (window.scrollY + window.innerHeight);
+    if (
+      ((window.innerWidth < 800 && distanceToBottom < 550) ||
+        distanceToBottom < 350) &&
+      this.state.photosToShow < this.props.photos.length
+    ) {
+      this.setState({ photosToShow: this.state.photosToShow + 8 });
+    }
+    this.ticking = false;
+  }
+
+  handleScroll = () => {
+    if (!this.ticking) {
+      this.ticking = true;
+      requestAnimationFrame(() => this.update());
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener(`scroll`, this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(`scroll`, this.handleScroll);
+  }
+
+  render() {
+    const { photos } = this.props;
+    return (
+      <PhotoGrid>
+        {photos
+          .slice(0, this.state.photosToShow)
+          .map(photo =>
+            <Photo src={require(`../photos/${photo}`)} key={photo} />
+          )}
+      </PhotoGrid>
+    );
+  }
+}
 
 export default Photos;
