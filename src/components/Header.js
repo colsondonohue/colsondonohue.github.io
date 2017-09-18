@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+
+const propTypes = {
+  path: PropTypes.string.isRequired
+};
 
 const HeaderWrapper = styled.header`
   background: #4568dc; /* fallback for old browsers */
@@ -54,14 +59,21 @@ const HeaderLink = styled(Link)`
   }
 `;
 
-const Header = () =>
+const Header = ({ path }) =>
   <HeaderWrapper>
-    <Logo>
-      <HeaderLink to="/">
-        <LogoSpan>Colson</LogoSpan>
-        Donohue
-      </HeaderLink>
-    </Logo>
+    {path === '/'
+      ? <Logo>
+          <LogoSpan>Colson</LogoSpan>
+          Donohue
+        </Logo>
+      : <Logo>
+          <HeaderLink to="/">
+            <LogoSpan>Colson</LogoSpan>
+            Donohue
+          </HeaderLink>
+        </Logo>}
   </HeaderWrapper>;
+
+Header.propTypes = propTypes;
 
 export default Header;

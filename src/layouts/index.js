@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 import './index.css';
 
 const propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 };
 
 const TemplateWrapper = ({ children }) =>
@@ -17,10 +17,10 @@ const TemplateWrapper = ({ children }) =>
       title="Colson Donohue"
       meta={[
         { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'keywords', content: 'sample, something' }
       ]}
     />
-    <Header />
+    <Header path={window.location.pathname} />
     <Container>
       {children()}
     </Container>
