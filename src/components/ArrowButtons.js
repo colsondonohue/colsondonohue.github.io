@@ -48,13 +48,13 @@ const ButtonContainer = styled.div`
 const ArrowButtons = ({ next, previous }) =>
   <ButtonContainer>
     {previous
-      ? <Button left to={previous.name}>
+      ? <Button left to={`/photos/${previous.name}`}>
           <IconContainer dangerouslySetInnerHTML={{ __html: LeftArrow }} />
           <Text left>prev</Text>
         </Button>
       : ''}
     {next
-      ? <Button to={next.name}>
+      ? <Button to={`/photos/${next.name}`}>
           <Text>next</Text>
           <IconContainer dangerouslySetInnerHTML={{ __html: RightArrow }} />
         </Button>

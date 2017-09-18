@@ -74,7 +74,7 @@ const IndexPage = ({ data }) =>
     />
     <Title>photos</Title>
     {data.allPhotosJson.edges.map(edge =>
-      <Link to={`photos/${edge.node.name}`} key={edge.node.name}>
+      <Link to={`/photos/${edge.node.name}`} key={edge.node.name}>
         <Card
           horizontal
           image={require(`../photos/${edge.node.photos[0]}`)}
