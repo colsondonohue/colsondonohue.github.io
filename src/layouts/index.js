@@ -11,8 +11,6 @@ const propTypes = {
   children: PropTypes.func
 };
 
-const path = typeof window != 'undefined' ? window.location.pathname : '';
-
 const TemplateWrapper = ({ children }) =>
   <div>
     <Helmet
@@ -22,7 +20,7 @@ const TemplateWrapper = ({ children }) =>
         { name: 'keywords', content: 'sample, something' }
       ]}
     />
-    <Header path={path} />
+    <Header />
     <Container>
       {children()}
     </Container>
