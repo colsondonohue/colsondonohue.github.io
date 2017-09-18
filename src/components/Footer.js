@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Link from 'gatsby-link';
 
 const FooterWrapper = styled.footer`
-  background: #B06AB3;  /* fallback for old browsers */
-  background: linear-gradient(to right, #4568DC, #B06AB3);
+  background: #b06ab3; /* fallback for old browsers */
+  background: linear-gradient(to right, #4568dc, #b06ab3);
   position: relative;
 
   &::after {
@@ -15,7 +15,7 @@ const FooterWrapper = styled.footer`
     left: -25%;
     width: 150%;
     height: 75%;
-    background: #F8F9F9;
+    background: #f8f9f9;
     transform: rotate(3deg);
     z-index: 1;
   }
@@ -36,7 +36,7 @@ const FooterLink = styled.a`
   font-weight: 700;
   letter-spacing: 0.5em;
   font-size: 2em;
-  color: #FFFFFF;
+  color: #ffffff;
 
   :hover {
     color: rgba(255, 255, 255, 0.8);
@@ -48,7 +48,9 @@ const Footer = () =>
     <FooterLinkContainer>
       <FooterLink href="https://github.com/colsondonohue">GitHub</FooterLink>
       <FooterLink href="https://500px.com/colsondonohue">500px</FooterLink>
-      <FooterLink href="https://www.last.fm/user/colsondonohue">Last.fm</FooterLink>
+      <FooterLink href="https://www.last.fm/user/colsondonohue">
+        Last.fm
+      </FooterLink>
     </FooterLinkContainer>
   </FooterWrapper>;
 
