@@ -14,6 +14,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   name
                   photos
                 }
+                next {
+                  name
+                }
+                previous {
+                  name
+                }
               }
             }
           }
@@ -30,7 +36,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             component: postTemplate,
             context: {
               name: edge.node.name,
-              photos: edge.node.photos
+              photos: edge.node.photos,
+              next: edge.next,
+              previous: edge.previous
             }
           });
         });

@@ -72,14 +72,13 @@ const IndexPage = ({ data }) =>
       siteLink="https://spryfieldurbanfarm.colsondonohue.com"
       githubLink="https://github.com/colsondonohue/spryfieldurbanfarm"
     />
-    <Title secondary>photos</Title>
+    <Title>photos</Title>
     {data.allPhotosJson.edges.map(edge =>
-      <Link to={`photos/${edge.node.name}`}>
+      <Link to={`photos/${edge.node.name}`} key={edge.node.name}>
         <Card
           horizontal
           image={require(`../photos/${edge.node.photos[0]}`)}
           title={edge.node.name}
-          key={edge.node.name}
         />
       </Link>
     )}

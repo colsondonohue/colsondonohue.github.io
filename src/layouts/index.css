@@ -6,7 +6,7 @@ html {
 body {
   margin: 0;
   overflow: hidden;
-  background-color: #F8F9F9;
+  background-color: #f8f9f9;
 }
 article,
 aside,
@@ -95,6 +95,9 @@ svg {
 }
 svg:not(:root) {
   overflow: hidden;
+}
+g {
+  fill: inherit;
 }
 code,
 kbd,

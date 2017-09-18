@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import githubIcon from 'ionicons-svg/logo-octocat';
 import linkIcon from 'ionicons-svg/ios-link';
+import IconContainer from './IconContainer';
 
 const propTypes = {
   image: PropTypes.string.isRequired,
@@ -116,8 +117,6 @@ const LinkContainer = TagContainer.extend`
 `;
 
 const PlainLink = styled.a`color: inherit;`;
-
-const IconContainer = styled.span`vertical-align: middle;`;
 
 const Card = ({ image, title, body, tags, githubLink, siteLink, horizontal }) =>
   <CardContainer horizontal={horizontal}>
