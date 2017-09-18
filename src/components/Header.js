@@ -6,6 +6,7 @@ const HeaderWrapper = styled.header`
   background: #4568dc; /* fallback for old browsers */
   background: linear-gradient(to right, #b06ab3, #4568dc);
   position: relative;
+  margin-bottom: -3em;
 
   &::after {
     position: absolute;
@@ -36,13 +37,9 @@ const Logo = styled.h1`
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  padding: 4em 0 9em;
+  padding: 4em 0 5em;
   margin: 0;
   display: block;
-
-  @media (max-width: 416px) {
-    padding-bottom: 11em;
-  }
 `;
 
 const HeaderLink = styled(Link)`

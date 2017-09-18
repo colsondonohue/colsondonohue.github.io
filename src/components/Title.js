@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Title = styled.h2`
-  color: ${props => props.secondary ? '#000000' : '#ffffff'};
+  color: #000000;
   text-align: center;
   font-weight: 300;
   text-transform: lowercase;
