@@ -12,7 +12,7 @@ import spryfieldUrbanFarm from './spryfieldurbanfarm.png';
 
 export const query = graphql`
   query GetPhotos {
-    allPhotosJson(limit: 3) {
+    allPhotosJson {
       edges {
         node {
           name
