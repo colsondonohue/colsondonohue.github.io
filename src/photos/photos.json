@@ -1,9 +1,59 @@
 [
   {
+    "name": "oslo",
+    "photos": [
+      "oslo/DSC_0493.jpg",
+      "oslo/DSC_0494.jpg",
+      "oslo/DSC_0495.jpg",
+      "oslo/DSC_0497.jpg",
+      "oslo/DSC_0500.jpg",
+      "oslo/DSC_0501.jpg",
+      "oslo/DSC_0502.jpg",
+      "oslo/DSC_0507.jpg",
+      "oslo/DSC_0510.jpg",
+      "oslo/DSC_0523.jpg",
+      "oslo/DSC_0528.jpg",
+      "oslo/DSC_0529.jpg",
+      "oslo/DSC_0530.jpg",
+      "oslo/DSC_0535.jpg",
+      "oslo/DSC_0539.jpg",
+      "oslo/DSC_0541.jpg",
+      "oslo/DSC_0543.jpg",
+      "oslo/DSC_0544.jpg",
+      "oslo/DSC_0546.jpg",
+      "oslo/DSC_0556.jpg",
+      "oslo/DSC_0563.jpg"
+    ]
+  },
+  {
+    "name": "gothenburg",
+    "photos": [
+      "gothenburg/DSC_0448.jpg",
+      "gothenburg/DSC_0453.jpg",
+      "gothenburg/DSC_0454.jpg",
+      "gothenburg/DSC_0457.jpg",
+      "gothenburg/DSC_0458.jpg",
+      "gothenburg/DSC_0461.jpg",
+      "gothenburg/DSC_0462.jpg",
+      "gothenburg/DSC_0463.jpg",
+      "gothenburg/DSC_0464.jpg",
+      "gothenburg/DSC_0468.jpg",
+      "gothenburg/DSC_0471.jpg",
+      "gothenburg/DSC_0473.jpg",
+      "gothenburg/DSC_0479.jpg",
+      "gothenburg/DSC_0481.jpg",
+      "gothenburg/DSC_0484.jpg",
+      "gothenburg/DSC_0485.jpg",
+      "gothenburg/DSC_0486.jpg",
+      "gothenburg/DSC_0487.jpg",
+      "gothenburg/DSC_0489.jpg"
+    ]
+  },
+  {
     "name": "munich",
     "photos": [
       "munich/DSC_0397.jpg",
-      "munich/DSC_0444.jpg",
+      "munich/DSC_0399.jpg",
       "munich/DSC_0400.jpg",
       "munich/DSC_0403.jpg",
       "munich/DSC_0405.jpg",
@@ -12,7 +62,7 @@
       "munich/DSC_0414.jpg",
       "munich/DSC_0415.jpg",
       "munich/DSC_0416.jpg",
-      "munich/DSC_0399.jpg",
+      "munich/DSC_0419.jpg",
       "munich/DSC_0421.jpg",
       "munich/DSC_0423.jpg",
       "munich/DSC_0425.jpg",
@@ -22,14 +72,14 @@
       "munich/DSC_0438.jpg",
       "munich/DSC_0439.jpg",
       "munich/DSC_0443.jpg",
-      "munich/DSC_0419.jpg"
+      "munich/DSC_0444.jpg"
     ]
   },
   {
     "name": "amsterdam",
     "photos": [
       "amsterdam/DSC_0139.jpg",
-      "amsterdam/DSC_0302.jpg",
+      "amsterdam/DSC_0141.jpg",
       "amsterdam/DSC_0145.jpg",
       "amsterdam/DSC_0151.jpg",
       "amsterdam/DSC_0153.jpg",
@@ -43,7 +93,7 @@
       "amsterdam/DSC_0178.jpg",
       "amsterdam/DSC_0190.jpg",
       "amsterdam/DSC_0193.jpg",
-      "amsterdam/DSC_0141.jpg",
+      "amsterdam/DSC_0201.jpg",
       "amsterdam/DSC_0203.jpg",
       "amsterdam/DSC_0204.jpg",
       "amsterdam/DSC_0214.jpg",
@@ -58,14 +108,14 @@
       "amsterdam/DSC_0287.jpg",
       "amsterdam/DSC_0290.jpg",
       "amsterdam/DSC_0291.jpg",
-      "amsterdam/DSC_0201.jpg"
+      "amsterdam/DSC_0302.jpg"
     ]
   },
   {
     "name": "copenhagen",
     "photos": [
       "copenhagen/DSC_0013.jpg",
-      "copenhagen/DSC_9998.jpg",
+      "copenhagen/DSC_0020.jpg",
       "copenhagen/DSC_0022.jpg",
       "copenhagen/DSC_0030.jpg",
       "copenhagen/DSC_0034.jpg",
@@ -81,7 +131,7 @@
       "copenhagen/DSC_0088.jpg",
       "copenhagen/DSC_0097.jpg",
       "copenhagen/DSC_0101.jpg",
-      "copenhagen/DSC_0020.jpg",
+      "copenhagen/DSC_0107.jpg",
       "copenhagen/DSC_0111.jpg",
       "copenhagen/DSC_0117.jpg",
       "copenhagen/DSC_0132.jpg",
@@ -98,14 +148,14 @@
       "copenhagen/DSC_9973.jpg",
       "copenhagen/DSC_9983.jpg",
       "copenhagen/DSC_9989.jpg",
-      "copenhagen/DSC_0107.jpg"
+      "copenhagen/DSC_9998.jpg"
     ]
   },
   {
     "name": "stockholm",
     "photos": [
       "stockholm/DSC_9661.jpg",
-      "stockholm/DSC_9893.jpg",
+      "stockholm/DSC_9665.jpg",
       "stockholm/DSC_9674.jpg",
       "stockholm/DSC_9713.jpg",
       "stockholm/DSC_9747.jpg",
@@ -117,7 +167,7 @@
       "stockholm/DSC_9802.jpg",
       "stockholm/DSC_9807.jpg",
       "stockholm/DSC_9814.jpg",
-      "stockholm/DSC_9665.jpg",
+      "stockholm/DSC_9817.jpg",
       "stockholm/DSC_9818.jpg",
       "stockholm/DSC_9820.jpg",
       "stockholm/DSC_9835.jpg",
@@ -130,7 +180,7 @@
       "stockholm/DSC_9876.jpg",
       "stockholm/DSC_9879-Edit.jpg",
       "stockholm/DSC_9889.jpg",
-      "stockholm/DSC_9817.jpg"
+      "stockholm/DSC_9893.jpg"
     ]
   }
 ]
