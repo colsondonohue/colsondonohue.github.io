@@ -6,7 +6,7 @@ let photos = [];
 const saveJSON = _ =>
   writeFileSync(`./src/photos/photos.json`, JSON.stringify(photos, '', 2));
 
-const compare = (a, b) => lstatSync(b).cTimeMs - lstatSync(a).cTimeMs;
+const compare = (a, b) => lstatSync(b).ctime - lstatSync(a).ctime;
 
 const isDirectory = source => lstatSync(source).isDirectory();
 const getDirectories = source =>
@@ -20,7 +20,6 @@ const getPhotos = source =>
   readdirSync(source)
     .map(photo => join(source, photo))
     .filter(isPhoto)
-    .sort(compare)
     .map(photo => photo.slice(11)); // remove "src/photos/" prefix
 
 const dirs = getDirectories('./src/photos/');
