@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Photo = styled.img`
-  width: 90%;
+  max-width: 90%;
   margin-bottom: 2em;
+  max-height: 100vh;
+
+  @media (max-width: 400px) {
+    margin-bottom: 1em;
+  }
 `;
 
 const PhotoGrid = styled.div`
