@@ -1,5 +1,28 @@
 [
   {
+    "name": "berlin",
+    "photos": [
+      "berlin/DSC_1699.jpg",
+      "berlin/DSC_1701.jpg",
+      "berlin/DSC_1705.jpg",
+      "berlin/DSC_1706.jpg",
+      "berlin/DSC_1708.jpg",
+      "berlin/DSC_1711.jpg",
+      "berlin/DSC_1722.jpg",
+      "berlin/DSC_1730.jpg",
+      "berlin/DSC_1744.jpg",
+      "berlin/DSC_1750.jpg",
+      "berlin/DSC_1751.jpg",
+      "berlin/DSC_1758.jpg",
+      "berlin/DSC_1766.jpg",
+      "berlin/DSC_1777.jpg",
+      "berlin/DSC_1778.jpg",
+      "berlin/DSC_1781.jpg",
+      "berlin/DSC_1782.jpg",
+      "berlin/DSC_1785.jpg"
+    ]
+  },
+  {
     "name": "tahoe",
     "photos": [
       "tahoe/DSC_1487.jpg",
