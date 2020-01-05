@@ -6,7 +6,7 @@ let photos = [];
 const saveJSON = _ =>
   writeFileSync(`./src/photos/photos.json`, JSON.stringify(photos, '', 2));
 
-const compare = (a, b) => lstatSync(b).ctime - lstatSync(a).ctime;
+const compare = (a, b) => lstatSync(b).birthtime - lstatSync(a).birthtime;
 
 const isDirectory = source => lstatSync(source).isDirectory();
 const getDirectories = source =>
