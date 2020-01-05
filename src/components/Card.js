@@ -8,11 +8,13 @@ import IconContainer from './IconContainer';
 const propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   body: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
   githubLink: PropTypes.string,
   siteLink: PropTypes.string,
-  horizontal: PropTypes.bool
+  horizontal: PropTypes.bool,
+  center: PropTypes.bool,
 };
 
 const CardContainer = styled.div`
@@ -21,7 +23,7 @@ const CardContainer = styled.div`
   position: relative;
   vertical-align: top;
   margin: 1rem;
-  height: ${props => (props.horizontal ? '10rem' : '29rem')};
+  height: ${props => (props.horizontal ? '10rem' : '30rem')};
   max-width: ${props => (props.horizontal ? '1200px' : '19rem')};
   width: ${props => (props.horizontal ? 'calc(100% - 3rem)' : '')};
   background-color: #ffffff;
@@ -43,7 +45,7 @@ const CardImage = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${props => props.image});
-  background-position: ${props => (props.horizontal ? 'center' : '')};
+  background-position: ${props => (props.center || props.horizontal ? 'center' : '')};
   height: ${props => (props.horizontal ? '10rem' : '16rem')};
   border-radius: ${props =>
     props.horizontal ? '0.2rem' : '0.2rem 0.2rem 0 0'};
@@ -53,9 +55,15 @@ const CardContent = styled.div`padding: 1rem;`;
 
 const CardTitle = styled.h3`
   margin-top: 0;
+  margin-bottom: 0.4rem;
   font-weight: 300;
-  margin-bottom: 0.7rem;
   text-transform: capitalize;
+`;
+
+const CardSubtitle = styled.h4`
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
 `;
 
 const PhotoTitle = styled.h3`
@@ -89,7 +97,7 @@ const TagContainer = styled.div`
   padding: 0 0.7rem 0.7rem;
 
   ${CardContainer}:hover & {
-    display: none;
+    display: ${props => (props.cardHasLinks ? 'none' : 'inline-block')};
   }
 `;
 
@@ -118,23 +126,29 @@ const LinkContainer = TagContainer.extend`
 
 const PlainLink = styled.a`color: inherit;`;
 
-const Card = ({ image, title, body, tags, githubLink, siteLink, horizontal }) =>
+const Card = ({ image, title, subtitle, body, tags, githubLink, siteLink, horizontal, center }) =>
   <CardContainer horizontal={horizontal}>
-    <CardImage image={image} horizontal={horizontal} />
+    <CardImage center={center} image={image} horizontal={horizontal} />
     <CardContent>
       {horizontal
         ? <PhotoTitle>
             {title}
           </PhotoTitle>
-        : <CardTitle>
-            {title}
-          </CardTitle>}
-      <CardBody>
-        {body}
-      </CardBody>
+        : <div>
+            <CardTitle>
+              {title}
+            </CardTitle>
+            <CardSubtitle>
+              {subtitle}
+            </CardSubtitle>
+          </div>}
+      {!horizontal &&
+        <CardBody>
+          {body}
+        </CardBody>}
     </CardContent>
     {tags
-      ? <TagContainer>
+      ? <TagContainer cardHasLinks={!!(githubLink || siteLink)}>
           {tags.map((tag, i) =>
             <Tag key={i}>
               {tag}
