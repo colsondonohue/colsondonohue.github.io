@@ -10,7 +10,6 @@ import synesthetic from './synesthetic.png';
 import haveYouSeenMyRecords from './haveyouseenmyrecords.png';
 import stockXTicker from './stockxticker.png';
 import notSub from './notsub.png';
-import spryfieldUrbanFarm from './spryfieldurbanfarm.png';
 
 export const query = graphql`
   query GetPhotos {
@@ -85,15 +84,6 @@ const IndexPage = ({ data }) =>
       body="Monitor your subscription services to make unsubscribing from unused ones a breeze. Click through for hackathon quality code."
       tags={['Chrome Extension', 'JavaScript', 'localStorage']}
       githubLink="https://github.com/lolzcatz/notsub"
-    />
-    <Card
-      image={spryfieldUrbanFarm}
-      title="Spryfield Urban Farm"
-      subtitle="Community Project"
-      body="The best place to garden in the HRM needed a slick site that was editable by older users, and I wasn't touching WordPress. Simpla to the rescue."
-      tags={['Simpla', 'JavaScript', 'HTML', 'SCSS']}
-      siteLink="https://spryfieldurbanfarm.colsondonohue.com"
-      githubLink="https://github.com/colsondonohue/spryfieldurbanfarm"
     />
     <Title>photos</Title>
     {data.allPhotosJson.edges.map(edge =>
